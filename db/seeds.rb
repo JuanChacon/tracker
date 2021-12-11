@@ -12,5 +12,10 @@ if Rails.env.development?
     5.times do 
         project = Project.new(name:Faker::Movies::StarWars.character)
         project.save
-    end    
+    end
+    
+    5.times do 
+        project = Task.new(name:Faker::TvShows::Friends.character)
+        project.save
+    end
 end

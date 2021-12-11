@@ -8,9 +8,7 @@ module Main
       #error_formatter :json, Grape::Formatter::ActiveModelSerializers
     
        mount Projects::Services
-    #   mount Enterprises::Services
-    #   mount Catalogs::Services
-    #   mount Employees::Services
+       mount Tasks::Services
   
       add_swagger_documentation(
           base_path: '/',
