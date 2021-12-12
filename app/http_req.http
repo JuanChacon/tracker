@@ -8,3 +8,38 @@ Content-Type:  application/json
 {
     "name": ""
 }
+
+###
+POST http://localhost:3000/api/projects/6/delete HTTP/1.1
+Content-Type:  application/json
+
+###
+GET http://localhost:3000/api/projects/5/report HTTP/1.1
+Content-Type:  application/json
+
+
+
+## TASKS REQUESTS
+
+###
+GET http://localhost:3000/api/tasks HTTP/1.1
+Content-Type:  'application/json'
+
+
+###
+POST http://localhost:3000/api/tasks/create HTTP/1.1
+Content-Type:  application/json
+
+{
+    "name": ""
+}
+
+###
+POST http://localhost:3000/api/tasks/assign HTTP/1.1
+Content-Type:  application/json
+
+{
+    "taskId": 2,
+    "projectId": 5
+}
+
