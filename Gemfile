@@ -39,14 +39,19 @@ gem 'doorkeeper-jwt'
 gem 'oauth2'
 gem 'grape', '~> 1.1.0'
 gem 'wine_bouncer', '~> 1.0.4'
-# Use entity concept
-gem 'grape-entity'
-
+# API paginator
+gem 'kaminari', '>=0.14.1'
+gem 'api-pagination'
 #cors midleware
 gem 'rack-cors', :require => 'rack/cors'
 
 # ENV VARS
 gem 'dotenv'
+
+# json formatter to models
+
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'grape-active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,9 +60,9 @@ group :development, :test do
   # gem for create fake information
   gem 'faker'
 
-  #gems to show a view to test variables, etc
-  gem 'better_errors' 
-  gem 'binding_of_caller'
+  #gems to show a view where we can test variables, etc
+  # gem 'better_errors' 
+  # gem 'binding_of_caller'
 
   #documentation via web to the API
   gem "grape-swagger", "0.30.0"
@@ -77,7 +82,6 @@ group :development do
   gem 'spring'
 end
 
-# rails g model Task name:string elapsed_time:integer running:true start_time:integer deleted:boolean
 
 
 #https://www.digitalocean.com/community/tutorials/build-a-restful-json-api-with-rails-5-part-one

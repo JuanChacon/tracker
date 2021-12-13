@@ -1,11 +1,11 @@
+require "grape-swagger"
 module Main
     class API < Helpers::Base
       format :json
       default_error_formatter :json
       content_type :json, 'application/json'
       use ::WineBouncer::OAuth2
-      #formatter :json, Grape::Formatter::ActiveModelSerializers
-      #error_formatter :json, Grape::Formatter::ActiveModelSerializers
+      formatter :json, Grape::Formatter::ActiveModelSerializers
     
        mount Projects::Services
        mount Tasks::Services

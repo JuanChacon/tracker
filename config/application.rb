@@ -42,11 +42,11 @@ module Tracker
     #midleware to permit request to server
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:3000','127.0.0.1:3000'
-        resource "/api/*",
+       origins 'localhost:3000','127.0.0.1:3000'
+       resource "/api/*",
                  :headers => :any,
-                 :methods => [:get, :post, :put, :delete, :options],
-        if: proc{|env|  p env['HTTP_HOST'] }         
+                 :methods => [:get, :post, :put, :delete, :options]
+              
       end
     end
   end
