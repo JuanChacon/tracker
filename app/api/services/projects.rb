@@ -11,7 +11,7 @@ module Projects
             paginate per_page: 3, max_per_page: 5
 
             get '/' do
-            all_projects = paginate(Project.all.select(:id,:name,:deleted)) 
+            all_projects = paginate(Project.all.map{|project_obj| {id:project_obj.id,name:project_obj.name, deleted: project_obj.boolean_to_int("deleted")}}) 
             
             projects_count = all_projects.count
             {items: all_projects,
@@ -43,7 +43,7 @@ module Projects
                     if updated
                         response[:name]  = project.name
                         response[:id]  = project.id
-                        response[:deleted]  = project.deleted
+                        response[:deleted]  = project.boolean_to_int("deleted")
                     else
                         response[:errors]= project.errors 
                     end
