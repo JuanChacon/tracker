@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
   
+
+  #mount API
+  mount Helpers::Base => '/'
+
   #helper from doorkeeper to do routes to token, create applications keys and others resources
   use_doorkeeper do
     # No need to register client application
     skip_controllers :applications, :authorized_applications
   end
 
-  #
-  mount Helpers::Base => '/'
+
+  # root '/'
+
+  # mount GrapeSwaggerRails::Engine, at: "/documentation"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
