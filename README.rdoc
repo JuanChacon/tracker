@@ -7,6 +7,12 @@ Things you may want to cover:
 
 * Ruby version
      2.3.0
+* Rails version
+     4.2.11     
+
+*Basic informacion
+     Ruby on Rails as known as RoR, is a MVC architecture framework.
+
 
 * System dependencies
      rvm as gem manager
@@ -18,7 +24,8 @@ Things you may want to cover:
     * bundle exec rake db:create
     * bundle exec rake db:migrate -> apply changes to database like create tablas or add fields to table
     * bundle exec rake db:seed -> import basic data like, state names, city names etc.
-
+     or
+     * bundle exec rake db:setup
 
 * Database initialization
     ### sqlite as database
@@ -28,5 +35,19 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+* The api structure is in the path app/api
+
+* Use rspec to do test for Services and models
+
+* Evaluate the test with the command: bundle exec rspec 
+
+* Start server with the command: rails server or rails s
+
+* Postman documentation:
+
+https://documenter.getpostman.com/view/3506972/UVR5qosn
+
+
 
 

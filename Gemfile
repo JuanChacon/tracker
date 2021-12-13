@@ -84,6 +84,3 @@ end
 
 
 
-#https://www.digitalocean.com/community/tutorials/build-a-restful-json-api-with-rails-5-part-one
-
-#https://medium.com/swlh/how-to-build-an-api-with-ruby-on-rails-28e27d47455a
