@@ -4,14 +4,11 @@ module Helpers
       mount Main::API
       
       def self.respond_to_error(e)
-        p e, 'EEEEE'
         logger.error e unless Rails.env.test? # Breaks tests...
         eclass = e.class.to_s
-        p eclass
         message = "OAuth error: #{e}" if eclass =~ /WineBouncer::Errors/
         opts = {error: message || e.message}
         opts[:trace] = e.backtrace[0, 10] unless Rails.env.production?
-        p opts.to_json
         Rack::Response.new(opts.to_json, self.status_code_for(e, eclass), {
             'Content-Type' => 'application/json',
             'Access-Control-Allow-Origin' => '*',
